@@ -34,7 +34,11 @@ module.exports = () => {
         start_url: '/',
         publicPath: '/',
         icons: [
-          
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          }
         ]
       })
     ],
@@ -49,6 +53,7 @@ module.exports = () => {
           test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
+            
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
